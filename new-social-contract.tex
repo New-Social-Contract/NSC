@@ -1,0 +1,50 @@
+\documentclass{report}
+\usepackage{import}
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{color}
+%\usepackage{showframe}
+\usepackage[left=20mm, right=20mm, top=20mm, bottom=30mm]{geometry}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\titlespacing*{\chapter}{0pt}{-20pt}{40pt}
+\definecolor{RoyalRed}{RGB}{157,16,45}
+\renewcommand{\baselinestretch}{1.25}
+\setlength{\parindent}{14pt}
+\setlength{\parskip}{0.25em}
+% \titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Large}
+%\titleformat{\chapter}{\normalfont\huge}{\thechapter.}{24pt}{\huge}
+\titleformat{\chapter}[display]
+    {\center \normalsize \huge  \color{black}}%
+    {\flushright\Large \color{RoyalRed}%
+        \MakeUppercase{\chaptertitlename}\hspace{1ex}%
+        {\sffamily\Huge\selectfont\thechapter}}%
+    {0 pt}%
+    {\bfseries\huge}%
+\title{The New Social Contract}
+\author{Justin P}
+
+\begin{document}
+    \hypersetup{pageanchor=false}
+%    \maketitle
+    \import{./}{title-page}
+    \pagebreak
+    \setcounter{secnumdepth}{2}
+    \setcounter{tocdepth}{2}
+    \tableofcontents
+    \thispagestyle{empty}
+    \pagebreak
+    \hypersetup{pageanchor=true}
+    \pagenumbering{arabic}
+    \import{preamble}{preamble}
+    \import{axioms/}{axioms}
+\end{document}
